@@ -2,17 +2,28 @@ import numpy as np
 
 def dcp_lu_solver(A, b):
     """
-    Resuelve Ax = b usando descomposición LU con pivoteo parcial.
+    Resuelve ecuaciones lineales A*x = b usando el método LU.
     
     Args:
-        A: Matriz de coeficientes (numpy array 2D cuadrada).
-        b: Vector de términos independientes (numpy array 1D).
+        A: Matriz de coeficientes (numpy.ndarray).
+        b: Vector de términos independientes (numpy.ndarray).
         
     Returns:
         x: Solución del sistema (numpy array 1D).
     
     Raises:
         ValueError: Si la matriz es singular o no cuadrada.
+
+    
+    Ejemplo de uso:
+    --------
+    >>> A = np.array([
+    >>>     [25, 5, 1],
+    >>>     [64, 8, 1],
+    >>>     [144, 12, 1]
+    >>> ], dtype=float)
+    >>> b = np.array([106.8, 177.2, 279.2], dtype=float)
+    >>> dcp_lu_solver(A, b)
     """
     n = len(b)
     L = np.eye(n)
@@ -48,18 +59,3 @@ def dcp_lu_solver(A, b):
         x[i] = (y[i] - np.dot(U[i, i + 1:], x[i + 1:])) / U[i, i]
 
     return x
-
-
-
-# reference de la imagen "descomposicion-lu-example.png"
-# A = np.array([
-#     [25, 5, 1],
-#     [64, 8, 1],
-#     [144, 12, 1]
-# ], dtype=float)
-
-# b = np.array([106.8, 177.2, 279.2], dtype=float)
-# x = dcp_lu_solver(A, b)
-
-# for i, xi in enumerate(x):
-#     print(f"x{i+1} = {xi:.6f}")

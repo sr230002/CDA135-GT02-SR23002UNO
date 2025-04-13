@@ -14,8 +14,19 @@ def jacobi_solver(A, b, tol=1e-6, max_iter=1000):
         x: Solución aproximada (numpy array 1D).
         iterations: Número de iteraciones realizadas.
     
-    Raises:
+    Excepciones:
+    --------
         ValueError: Si la matriz no es cuadrada o diagonalmente dominante.
+    
+    Ejemplo de uso:
+    --------
+    >>> A = np.array([
+    >>>     [10, 3, 1],
+    >>>     [5, -10, 3],
+    >>>     [1, 3, 10]
+    >>> ])
+    >>> b = np.array([14, -5, 14])
+    >>> jacobi_solver(A, b)
     """
     n = len(b)
     if A.shape != (n, n):
@@ -39,23 +50,3 @@ def jacobi_solver(A, b, tol=1e-6, max_iter=1000):
         x = x_new.copy()
     
     return x_new, iteration + 1
-
-
-
-# referencia de la imagen "gauss-seidel-jacobi-example.png"
-# A = np.array([
-#     [10, 3, 1],
-#     [5, -10, 3],
-#     [1, 3, 10]
-# ])
-
-# b = np.array([14, -5, 14])
-
-# x_aprox, iteraciones = jacobi_solver(A, b)
-
-# print("Solución aproximada:")
-# variables = ['x', 'y', 'z']
-# for i, val in enumerate(x_aprox):
-#     print(f"{variables[i]} = {val:.6f}")
-
-# print(f"\nNúmero de iteraciones: {iteraciones}")

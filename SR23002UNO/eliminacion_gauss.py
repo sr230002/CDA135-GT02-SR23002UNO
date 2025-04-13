@@ -10,6 +10,16 @@ def eliminacion_gauss_solver(A, b):
     
     Returns:
         x: Solución del sistema (numpy array 1D).
+    
+    --------
+    Ejemplo de uso:
+    >>> A = np.array([
+    >>>     [1, 1, 1],
+    >>>     [2, 3, -4],
+    >>>     [1, -1, 1]
+    >>> ], dtype=float)
+    >>> b = np.array([1,9,-1], dtype=float)
+    >>> eliminacion_gauss_solver(A, b)
     """
     n = len(b)
     Ab = np.column_stack((A, b)).astype(float)
@@ -26,19 +36,3 @@ def eliminacion_gauss_solver(A, b):
         x[i] = Ab[i, -1] - np.dot(Ab[i, i+1:n], x[i+1:n])
     
     return x
-
-
-
-# referencia de la imagen "gauss-example.png"
-# A = np.array([
-#     [1, 1, 1],
-#     [2, 3, -4],
-#     [1, -1, 1]
-# ], dtype=float)
-
-# b = np.array([1,9,-1], dtype=float)
-
-# sol = eliminacion_gauss_solver(A, b)
-
-# for i, x in enumerate(sol):
-#     print(f"x{i+1} = {x:.6f}")
