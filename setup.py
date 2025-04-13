@@ -6,7 +6,7 @@ HERE = pathlib.Path(__file__).parent
 
 setup(
     name='SR23002UNO',
-    version='1.0.4',
+    version='1.0.5',
     author='David Enrique Sixco Ramos',
     author_email='sr23002@ues.edu.sv',
     description='Liberia para resolver ecuaciones lineales y no lineales',
