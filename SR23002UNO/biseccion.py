@@ -28,4 +28,4 @@ def biseccion_solver(f, a, b, tol=1e-6, max_iter=100):
 #print(biseccion_solver(lambda x: x**3 + 2*x**2 + 10*x - 20, -7, 16))
 
 # x**5 - 3*x**2 + 1
-print(biseccion_solver(lambda x: x**5 -3*x**2+1, 1, -1))
+# print(biseccion_solver(lambda x: x**5 -3*x**2+1, 1, -1))
