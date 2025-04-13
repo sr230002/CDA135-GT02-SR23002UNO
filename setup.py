@@ -1,20 +1,22 @@
 
 import pathlib
-from setuptools import setup, find_packages
+from setuptools import setup
 HERE = pathlib.Path(__file__).parent
 
 
 setup(
     name='SR23002UNO',
-    version='0.1',
+    version='1.0.3',
     author='David Enrique Sixco Ramos',
     author_email='sr23002@ues.edu.sv',
-    description='Liberia para resolver ecuaciones',
+    description='Liberia para resolver ecuaciones lineales y no lineales',
     long_description=(HERE / "README.md").read_text(encoding='utf-8'),
     long_description_content_type='text/markdown',
-    url='https://github.com/davidsixco/CDA135-GT02-SR23002UNO',
+    url='https://github.com/sr230002/CDA135-GT02-SR23002UNO',
     license='MIT',
-    packages=find_packages(),
+    packages=['SR23002UNO'],
     include_package_data=True,
-    install_requires=[],
+    install_requires=[
+        'numpy',
+    ],
 )
