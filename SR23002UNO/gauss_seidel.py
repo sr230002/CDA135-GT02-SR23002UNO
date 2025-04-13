@@ -30,3 +30,22 @@ def gauss_seidel_solver(A, b, initial_guess=None, tol=1e-6, max_iter=1000):
             break
     
     return x, iterations
+
+
+# referencia de la imagen "gauss-seidel-jacobi-example.png"
+# A = np.array([
+#     [10, 3, 1],
+#     [5, -10, 3],
+#     [1, 3, 10]
+# ])
+
+# b = np.array([14, -5, 14])
+
+# x_aprox, iteraciones = gauss_seidel_solver(A, b)
+
+# print("Solución aproximada:")
+# variables = ['x', 'y', 'z']
+# for i, val in enumerate(x_aprox):
+#     print(f"{variables[i]} = {val:.6f}")
+
+# print(f"\nNúmero de iteraciones: {iteraciones}")

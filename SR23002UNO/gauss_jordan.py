@@ -26,3 +26,33 @@ def gauss_jordan_solver(matrix, tol=1e-10):
                 m[j] = m[j] - factor * m[i]
 
     return m[:, -1]
+
+
+
+# referencia de la imagen "gauss-example.png"
+# A = np.array([
+#     [1, 1, 1, 1],
+#     [2, 3, -4, 9],
+#     [1, -1, 1, -1]
+# ], dtype=float)
+
+# sol = gauss_jordan_solver(A)
+
+# for i, x in enumerate(sol):
+#     print(f"x{i+1} = {x:.6f}")
+
+
+# Sistema:
+# 3x + 2y + z = 0
+# 5x + 3y + 4z = 2
+# x + y - z = 1
+A = np.array([
+    [3, 2, 1, 1],
+    [5, 3, 4, 2],
+    [1, 1, -1, 1]
+], dtype=float)
+
+sol = gauss_jordan_solver(A)
+
+for i, x in enumerate(sol):
+    print(f"x{i+1} = {x:.6f}")
